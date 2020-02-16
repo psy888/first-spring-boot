@@ -4,21 +4,23 @@ import com.brain.firstspringboot.component.Person;
 import com.brain.firstspringboot.model.Taxi;
 import com.brain.firstspringboot.repository.TaxiRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class TaxiCaller {
 
     private final TaxiRepository taxiRepository;
 
     public void call(Person person){
         Taxi car= taxiRepository.getFreeTaxi();
-        System.out.println("Call taxi for " + person);
+        log.info("Call taxi for " + person);
         if(car!=null) {
-            System.out.println("Car : "+ car);
+            log.info("Car : "+ car);
         }else{
-            System.out.println("No free cars today!");
+            log.info("No free cars today!");
         }
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@ToString
+@ToString(exclude = "taxiCaller")
 public class Person {
     @Value("${user.properties.person.name}")
     private String name;
