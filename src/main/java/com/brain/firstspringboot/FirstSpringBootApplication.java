@@ -27,9 +27,7 @@ public class FirstSpringBootApplication {
 
 	@Bean
 	public CommandLineRunner run(){
-		return args -> {
-			person.goTaxi();
-		};
+		return args -> person.goTaxi();
 	}
 
 }
