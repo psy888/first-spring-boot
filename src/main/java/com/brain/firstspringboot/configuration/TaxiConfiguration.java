@@ -1,6 +1,7 @@
 package com.brain.firstspringboot.configuration;
 
 import com.brain.firstspringboot.model.Taxi;
+import com.google.common.collect.Lists;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
