@@ -8,15 +8,22 @@ import java.time.DayOfWeek;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static java.util.Objects.isNull;
+
 @Repository
 public class TaxiRepository {
     @Autowired
     List<Taxi> taxiList;
 
     public Taxi getFreeTaxi(){
+        if(isNull(taxiList))
+            throw new RuntimeException("No taxi list");
+        if(taxiList.isEmpty())
+            throw new RuntimeException("Taxi list is empty");
+        DayOfWeek today = LocalDateTime.now().getDayOfWeek();
         return taxiList.stream()
-                .filter(taxi -> taxi.getRestDay()!= LocalDateTime.now().getDayOfWeek())
+                .filter(taxi -> taxi.getRestDay()!= today)
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(()->new RuntimeException("No free cars"));
     }
 }

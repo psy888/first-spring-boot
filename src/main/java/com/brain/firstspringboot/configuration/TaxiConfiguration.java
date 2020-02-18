@@ -14,10 +14,11 @@ public class TaxiConfiguration {
     @Bean
     public List<Taxi> taxiList(){
         return Lists.newArrayList(
-                new Taxi("Lanos","AP1234AA", "Jack", DayOfWeek.SATURDAY),
-                new Taxi("Aveo","AP4321AA", "Tim", DayOfWeek.WEDNESDAY),
-                new Taxi("Camry","AP4213AA", "Ben", DayOfWeek.MONDAY),
-                new Taxi("Corolla","AP3142AA", "Rik", DayOfWeek.FRIDAY)
+                new Taxi("Lanos","AP1234AA", "Jack", DayOfWeek.SUNDAY),
+                new Taxi("Aveo","AP4321AA", "Tim", DayOfWeek.SUNDAY),
+                new Taxi("Camry","AP4213AA", "Ben", DayOfWeek.SUNDAY),
+                new Taxi("Corolla","AP3142AA", "Rik", DayOfWeek.SUNDAY)
         );
     }
+
 }

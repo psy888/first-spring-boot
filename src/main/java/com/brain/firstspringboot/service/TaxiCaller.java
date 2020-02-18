@@ -14,13 +14,9 @@ public class TaxiCaller {
 
     private final TaxiRepository taxiRepository;
 
-    public void call(Person person){
-        Taxi car= taxiRepository.getFreeTaxi();
+    public void call(Person person) {
+        Taxi car = taxiRepository.getFreeTaxi();
         log.info("Call taxi for " + person);
-        if(car!=null) {
-            log.info("Car : "+ car);
-        }else{
-            log.info("No free cars today!");
-        }
+        log.info("Car : " + car);
     }
 }
